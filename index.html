@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refactory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              custom: ['"Bruno Ace"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gradient-to-b from-green-500 to-blue-500 h-screen">
+    <!-- navbar -->
+    <nav class="bg-white shadow-lg">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div>
+            <!-- Website Logo -->
+            <a href="#" class="flex items-center py-4 px-2">
+              <img
+                src="https://refactory.id/_app/immutable/assets/refactory-logo-2ed41d7c.png"
+                alt="Logo"
+                class="h-10 w-10 mr-2 bg-black rounded-lg" />
+              <span class="font-custom text-gray-500 text-lg">Refactory</span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center justify-center space-x-1">
+            <a
+              href=""
+              class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-custom"
+              >Home</a
+            >
+            <a
+              href=""
+              class="py-4 px-2 text-gray-500 font-custom hover:text-green-500 transition duration-300"
+              >Services</a
+            >
+            <a
+              href=""
+              class="py-4 px-2 text-gray-500 font-custom hover:text-green-500 transition duration-300"
+              >About</a
+            >
+            <a
+              href=""
+              class="py-4 px-2 text-gray-500 font-custom hover:text-green-500 transition duration-300"
+              >Contact Us</a
+            >
+          </div>
+
+          <!-- Secondary Navbar items -->
+          <div class="hidden md:flex items-center space-x-3">
+            <a
+              href="#"
+              class="py-2 px-4 font-custom text-white border border-green-500 bg-green-500 rounded hover:bg-green-400 transition duration-300"
+              >Log In</a
+            >
+            <a
+              href="#"
+              class="py-2 px-4 font-custom text-gray-500 border border-green-500 rounded hover:text-white hover:bg-green-500 transition duration-300"
+              >Sign Up</a
+            >
+          </div>
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button class="outline-none mobile-menu-button">
+              <svg
+                class="w-6 h-6 text-gray-500 hover:text-green-500"
+                x-show="!showMenu"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+              </svg>
+
+              <svg
+                class="w-6 h-6 text-gray-500 hover:text-green-500 hidden"
+                x-show="showMenu"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div class="lg:hidden hidden md:hidden mobile-menu">
+        <ul class="">
+          <li class="active">
+            <a
+              href="index.html"
+              class="block text-sm px-2 py-4 text-white bg-green-500 font-custom"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+              >Sign up</a
+            >
+          </li>
+        </ul>
+      </div>
+      <script>
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+        const iconOpen = document.querySelector(
+          ".mobile-menu-button svg:first-child"
+        );
+        const iconClose = document.querySelector(
+          ".mobile-menu-button svg:last-child"
+        );
+
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+          iconOpen.classList.toggle("hidden");
+          iconClose.classList.toggle("hidden");
+        });
+      </script>
+    </nav>
+    <!-- hero -->
+  </body>
+</html>
